@@ -12,6 +12,8 @@ class ParamsFormatter
 
   AVAILABLE_FORMATS = %w[year month day hour minute second]
 
+  DEFAULT_TIME_FORMAT = '%Y-%m-%d'
+
   attr_reader :errors
 
   def initialize(params)
@@ -30,6 +32,8 @@ class ParamsFormatter
   attr_reader :time_formats
 
   def convert_params(params)
+    return [] unless params.any?
+
     params['format'].split(',')
   end
 
@@ -50,6 +54,8 @@ class ParamsFormatter
   end
 
   def split_format
+    return DEFAULT_TIME_FORMAT unless time_formats.any?
+
     time_formats.map { |format| TIME_METHODS[format.to_sym] }.join('-')
   end
 end
