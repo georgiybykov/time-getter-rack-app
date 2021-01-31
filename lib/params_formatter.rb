@@ -12,7 +12,7 @@ class ParamsFormatter
 
   AVAILABLE_FORMATS = %w[year month day hour minute second]
 
-  DEFAULT_TIME_FORMAT = '%Y-%m-%d'
+  DEFAULT_TIME_FORMAT = '%Y-%m-%d-%Hh-%Mm-%Ss'
 
   attr_reader :errors
 

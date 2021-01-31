@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require_relative 'lib/params_formatter'
-
 require_relative 'middleware/app_logger'
 require_relative 'app'
 

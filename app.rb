@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative 'lib/params_formatter'
+
 class App
   HTTP_STATUS = { ok: 200, bad_request: 400 }.freeze
 
