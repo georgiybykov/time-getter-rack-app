@@ -7,7 +7,7 @@ class App
     @request = Rack::Request.new(env)
     @formatted_params = ParamsFormatter.new(request.params)
 
-    [status, {}, body]
+    Rack::Response.new(body, status, {}).finish
   end
 
   private

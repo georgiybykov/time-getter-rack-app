@@ -1,4 +1,5 @@
 # Local IDE configurations
 .idea/*
 
+# Development log files
 log/*
