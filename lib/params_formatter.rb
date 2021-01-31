@@ -5,17 +5,17 @@ class ParamsFormatter
     year: '%Y',
     month: '%m',
     day: '%d',
-    hour: '%H',
-    minute: '%M',
-    second: '%S'
+    hour: '%Hh',
+    minute: '%Mm',
+    second: '%Ss'
   }.freeze
 
   AVAILABLE_FORMATS = %w[year month day hour minute second]
 
   attr_reader :errors
 
-  def initialize(query)
-    @time_formats = parse(query)
+  def initialize(params)
+    @time_formats = convert_params(params)
     @errors = []
 
     validate!
@@ -29,8 +29,8 @@ class ParamsFormatter
 
   attr_reader :time_formats
 
-  def parse(query)
-    query.split('=')[-1].split('%2C')
+  def convert_params(params)
+    params['format'].split(',')
   end
 
   def validate!
