@@ -3,3 +3,5 @@
 
 # Development log files
 log/*
+
+!/log/.keep
